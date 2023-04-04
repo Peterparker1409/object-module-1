@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Shopping-cart</title>
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="./index.css" />
+  
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <!-- <link rel="stylesheet" href="css/reponsive.css" /> -->
+</head>
+
+<body>
+  <!-- header -->
+  <header>
+    <nav>
+      <div class="img-nav">
+        <img style="width: 50px; background-color: aliceblue; border-radius: 50%;" src="./logo.png" alt="">
+      </div>
+      <div class="content-nav">
+        <ul>
+          <li><a href="#">Trang Chủ</a></li>
+          <li><a href="#">Sản Phẩm</a></li>
+          <li><a href="#">Liên Hệ</a></li>
+          <li><a href="#">Giới Thiệu</a></li>
+          <li><a href="./dangki.html">Đăng kí</a></li>
+          <li><a href="./dangnhap.html">Đăng nhập</a></li>
+        </ul>
+        <form>
+          <input type="text" name="search" placeholder="Tìm kiếm sản phẩm..." />
+          <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+        </form>
+      </div>
+      <!-- The Modal -->
+      <button id="cart">
+        <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+        Giỏ Hàng
+      </button>
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Giỏ Hàng</h5>
+            <span class="close">&times;</span>
+          </div>
+          <div class="modal-body">
+            <div class="cart-row">
+              <span class="cart-item cart-header cart-column">Sản Phẩm</span>
+              <span class="cart-price cart-header cart-column">Giá</span>
+              <span class="cart-quantity cart-header cart-column">Số Lượng</span>
+            </div>
+            <div class="cart-items">
+
+            </div>
+            <div class="cart-total">
+              <strong class="cart-total-title">Tổng Cộng:</strong>
+              <span class="cart-total-price">0VNĐ</span>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary close-footer">Đóng</button>
+            <button type="button" class="btn btn-primary order">Thanh Toán</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+  </header>
+  <!-- content -->
+  <section class="wrapper">
+    <div class="products">
+        <ul>
+            <li class="main-product">
+                <div class="img-product">
+                    <img style="    height: 270px;
+                    width: 200px;" class="img-prd"
+                        src="https://hitsandmrs.files.wordpress.com/2013/05/starbucks_cookiecrumble-chocwhip.jpg"
+                        alt="">
+                </div>
+                <div class="content-product">
+                    <h3 class="content-product-h3">Coffee kem sữa socola</h3>
+                    <div class="content-product-deltals">
+                        <div class="price">
+                            <span class="money">25000đ</span>
+                        </div>
+                        <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+            </li>
+            <li class="main-product">
+                <div class="img-product">
+                    <img style=" height: 270px;
+                    width: 200px;" class="img-prd"
+                    src="https://www.mommieswithcents.com/wp-content/uploads/2013/05/frap.jpg"
+                        alt="">
+                </div>
+                <div class="content-product">
+                    <h3 class="content-product-h3">Coffee kem sữa thạch</h3>
+                    <div class="content-product-deltals">
+                        <div class="price">
+                            <span class="money">82000đ</span>
+                        </div>
+                        <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+            </li>
+            <li class="main-product">
+                <div class="img-product">
+                    <img style="    height: 270px;
+                    width: 200px;" class="img-prd"
+                    src="https://www.antennasdirect.com/blog/eb-content/uploads/2013/04/Starbucks.jpg"
+                        alt="">
+                </div>
+                <div class="content-product">
+                    <h3 class="content-product-h3">Coffee kem sữa tươi</h3>
+                    <div class="content-product-deltals">
+                        <div class="price">
+                            <span class="money">78000đ</span>
+                        </div>
+                        <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+            </li>
+            <li class="main-product no-margin">
+                <div class="img-product">
+                    <img style="    height: 270px;
+                    width: 150px;" class="img-prd"
+                    src="http://s3.r29static.com/bin/entry/f3a/x,80/1729492/image.jpg"
+                        alt="">
+                </div>
+                <div class="content-product">
+                    <h3 class="content-product-h3">Coffee kem sữa pipi</h3>
+                    <div class="content-product-deltals">
+                        <div class="price">
+                            <span class="money">89000đ</span>
+                        </div>
+                        <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+            </li>
+            <li class="main-product">
+                <div class="img-product">
+                    <img style="    height: 270px;
+                    width: 200px;" class="img-prd"
+                    src="https://stories.starbucks.com/uploads/2019/01/Starbucks_Coffee_IcedMacchiato-1.jpg"
+                        alt="">
+                </div>
+                <div class="content-product">
+                    <h3 class="content-product-h3">Coffee sữa đá
+                    </h3>
+                    <div class="content-product-deltals">
+                        <div class="price">
+                            <span class="money">74000đ</span>
+                        </div>
+                        <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+            </li>
+            <li class="main-product">
+                <div class="img-product">
+                    <img  style="    height: 270px;
+                    width: 200px;" class="img-prd"
+                    src="https://fastfoodmenuprice.com/wp-content/uploads/2014/09/Starbucks-drink.jpg"
+                        alt="">
+                </div>
+                <div class="content-product">
+                    <h3 class="content-product-h3">Coffee kem sữa nâu </h3>
+                    <div class="content-product-deltals">
+                        <div class="price">
+                            <span class="money">76000đ</span>
+                        </div>
+                        <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+            </li>
+            <li class="main-product">
+                <div class="img-product">
+                    <img style="    height: 270px;
+                    width: 200px;" class="img-prd"
+                    src="https://www.thepeachkitchen.com/wp-content/uploads/2015/06/Starbucks.png"
+                        alt="">
+                </div>
+                <div class="content-product">
+                    <h3 class="content-product-h3">Coffee kem sữa <br>& kem dâu</h3>
+                    <div class="content-product-deltals">
+                        <div class="price">
+                            <span class="money">76000đ</span>
+                        </div>
+                        <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+            </li>
+            <li class="main-product no-margin">
+                <div class="img-product">
+                    <img style="    height: 270px;
+                    width: 200px;" class="img-prd"
+                    src="https://www.becentsable.net/wp-content/uploads/2014/02/Starbucks.jpg"
+                        alt="">
+                </div>
+                <div class="content-product">
+                    <h3 class="content-product-h3">Coffee kem sữa trắng</h3>
+                    <div class="content-product-deltals">
+                        <div class="price">
+                            <span class="money">85000đ</span>
+                        </div>
+                        <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section> 
+  <!-- content -->
+  <!-- <section class="wrapper">
+    <div class="products">
+      <ul class="products1">
+        <li class="main-product">
+          <div class="img-product">
+            <img class="img-prd" src="./shop1.png" alt="">
+          </div>
+          <div class="content-product">
+            <h3 class="content-product-h3">HỒNG TRÀ SỮA</h3>
+            <div class="content-product-deltals">
+              <div class="price">
+                <span class="money">80000đ</span>
+              </div>
+              <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
+            </div>
+          </div>
+        </li>
+        <li class="main-product">
+          <div class="img-product">
+            <img class="img-prd" src="./shop3.png" alt="">
+          </div>
+          <div class="content-product">
+            <h3 class="content-product-h3">HỒNG TRÀ SỮA</h3>
+            <div class="content-product-deltals">
+              <div class="price">
+                <span class="money">70000đ</span>
+              </div>
+              <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
+            </div>
+          </div>
+        </li>
+        <li class="main-product">
+          <div class="img-product">
+            <img class="img-prd" src="./shop3.png" alt="">
+          </div>
+          <div class="content-product">
+            <h3 class="content-product-h3">HỒNG TRÀ SỮA</h3>
+            <div class="content-product-deltals">
+              <div class="price">
+                <span class="money">75000đ</span>
+              </div>
+              <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
+            </div>
+          </div>
+        </li>
+        <li class="main-product">
+          <div class="img-product">
+            <img class="img-prd" src="./shop1.png" alt="">
+          </div>
+          <div class="content-product">
+            <h3 class="content-product-h3">HỒNG TRÀ SỮA</h3>
+            <div class="content-product-deltals">
+              <div class="price">
+                <span class="money">89000đ</span>
+              </div>
+              <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
+            </div>
+          </div>
+        </li>
+        <li class="main-product">
+          <div class="img-product">
+            <img class="img-prd" src="./shop1.png" alt="">
+          </div>
+          <div class="content-product">
+            <h3 class="content-product-h3">HỒNG TRÀ SỮA
+            </h3>
+            <div class="content-product-deltals">
+              <div class="price">
+                <span class="money">70000đ</span>
+              </div>
+              <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
+            </div>
+          </div>
+        </li>
+        <li class="main-product">
+          <div class="img-product">
+            <img class="img-prd" src="./shop1.png" alt="">
+          </div>
+          <div class="content-product">
+            <h3 class="content-product-h3">HỒNG TRÀ SỮA</h3>
+            <div class="content-product-deltals">
+              <div class="price">
+                <span class="money">85000đ</span>
+              </div>
+              <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
+            </div>
+          </div>
+        </li> -->
+        <!-- <li class="main-product">
+                    <div class="img-product">
+                        <img class="img-prd" src="./shop1.png" alt="">
+                    </div>
+                    <div class="content-product">
+                        <h3 class="content-product-h3">Module ISD1760 Thu Âm Thanh - Phát Âm Thanh 75s</h3>
+                        <div class="content-product-deltals">
+                            <div class="price">
+                                <span class="money">115000đ</span>
+                            </div>
+                            <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
+                        </div>
+                    </div>
+                </li>
+                <li class="main-product">
+                  <div class="img-product">
+                      <img class="img-prd" src="./shop1.png" alt="">
+                  </div>
+                  <div class="content-product">
+                      <h3 class="content-product-h3">Module ISD1760 Thu Âm Thanh - Phát Âm Thanh 75s</h3>
+                      <div class="content-product-deltals">
+                          <div class="price">
+                              <span class="money">115000đ</span>
+                          </div>
+                          <button type="button" class="btn btn-cart">Thêm Vào Giỏ</button>
+                      </div>
+                  </div>
+              </li> -->
+      </ul>
+    </div>
+
+
+
+
+
+  </section> 
+
+
+  <!-- footer -->
+  <footer>
+    <div class="footer-item">
+      <div class="img-footer">
+        <img style="width: 200px;" src="./logo.png" alt="" />
+      </div>
+      <!-- <div class="social">
+        <a href="#"><i class='bx bxl-facebook' ></i></a>
+        <a href="#"><i class='bx bxl-instagram' ></i></a>
+        <a href="#"><i class='bx bxl-tiktok' ></i></a>
+        <a href="#"><i class='bx bxl-youtube' ></i></a> -->
+        <div class="footer-main">
+          <div class="container">
+              <div class="grid">
+  
+                  <div class="footer_global accordion">
+                          <div class="info_block column size12of12 med_size4of12 lg_size2of12">
+                              <h4>
+                                 <label for="Qo206V8Y" data-icon="&amp;#x2304" tabindex="0"><img src="/assets/images/down-chevron.png" alt="" /></label>
+                              </h4>
+                              <input id="Qo206V8Y" name="footer" type="radio" aria-hidden="true" />
+                                  <ol>
+                                          <li><a href="/ve-chung-toi/di-san/" title="Di s&#x1EA3;n">Di s&#x1EA3;n</a></li>
+                                          <li><a href="/ve-chung-toi/cong-ty/" title="C&#xF4;ng ty">C&#xF4;ng ty</a></li>
+                                          <li><a href="/ve-chung-toi/co-hoi-nghe-nghiep/" title="C&#x1A1; h&#x1ED9;i ngh&#x1EC1; nghi&#x1EC7;p">C&#x1A1; h&#x1ED9;i ngh&#x1EC1; nghi&#x1EC7;p</a></li>
+                                  </ol>
+  
+  
+                          </div>
+                          <div class="info_block column size12of12 med_size4of12 lg_size2of12">
+                              <h4>
+                                      <a href="/dich-vu-khach-hang/" title="D&#x1ECA;CH V&#x1EE4; KH&#xC1;CH H&#xC0;NG">D&#x1ECA;CH V&#x1EE4; KH&#xC1;CH H&#xC0;NG</a>
+                                  <label for="RFulhaTc" data-icon="&amp;#x2304" tabindex="0"><img src="/assets/images/down-chevron.png" alt="" /></label>
+                              </h4>
+                              <input id="RFulhaTc" name="footer" type="radio" aria-hidden="true" />
+                                  <ol>
+                                          <li><a href="/dich-vu-khach-hang/cau-hoi-thuong-gap/" title="C&#xE2;u h&#x1ECF;i Th&#x1B0;&#x1EDD;ng G&#x1EB7;p">C&#xE2;u h&#x1ECF;i Th&#x1B0;&#x1EDD;ng G&#x1EB7;p</a></li>
+                                  </ol>
+  
+  
+                          </div>
+                          <div class="info_block column size12of12 med_size4of12 lg_size2of12">
+                              <h4>
+  LI&#xCA;N K&#x1EBE;T NHANH                                <label for="pQPqdD5l" data-icon="&amp;#x2304" tabindex="0"><img src="/assets/images/down-chevron.png" alt="" /></label>
+                              </h4>
+                              <input id="pQPqdD5l" name="footer" type="radio" aria-hidden="true" />
+                                  <ol>
+                                          <li><a href="/store-locator/" title="B&#x1ED9; &#x111;&#x1ECB;nh v&#x1ECB; C&#x1EED;a h&#xE0;ng">B&#x1ED9; &#x111;&#x1ECB;nh v&#x1ECB; C&#x1EED;a h&#xE0;ng</a></li>
+                                          <li><a href="http://www.starbucks.com/account/partneracct/idmlogin" title="D&#xE0;nh cho &#x110;&#x1ED1;i t&#xE1;c">D&#xE0;nh cho &#x110;&#x1ED1;i t&#xE1;c</a></li>
+                                  </ol>
+  
+  
+                          </div>
+  
+  
+                  </div>
+              </div>
+          </div>
+      </div>
+          <div class="footer-bottom">
+              <div class="container">
+                  <div class="grid">
+                      <div class="column size12of12">
+                          <ul class="site_selection">
+  
+                              <li class="change"><a class="culture" href="/"><span><img class="flag" src="/assets/images/VietNam_tcm89-24771_w1024_n.png" alt="" data-aspect="0" /></span></a></li>
+                                  <li class="native language">Ti&ecirc;&#x301;ng Vi&#x1EC7;t (VN)</li>
+                                  <li class="change language"><a href="https://en.starbucks.vn/" title="English">English</a></li>
+  
+  
+                          </ul>
+                      </div>
+  
+                      <div class="column size12of12">
+                          <ul class="footer_sub">
+                                  <li><a href="/ve-chung-toi/cong-ty/chinh-sach-truc-tuyen/kha-nang-truy-cap-web/" title="Kh&#x1EA3; n&#x103;ng truy c&#x1EAD;p Web">Kh&#x1EA3; n&#x103;ng truy c&#x1EAD;p Web</a></li>
+                                  <li><a href="/ve-chung-toi/cong-ty/chinh-sach-truc-tuyen/chi-nh-sa-ch-ba-o-ma-t-thong-tin/" title="Chi&#x301;nh Sa&#x301;ch Ba&#x309;o M&#xE2;&#x323;t Th&#xF4;ng Tin">Chi&#x301;nh Sa&#x301;ch Ba&#x309;o M&#xE2;&#x323;t Th&#xF4;ng Tin</a></li>
+                                  <li><a href="/ve-chung-toi/cong-ty/chinh-sach-truc-tuyen/dieu-khoan-su-dung/" title="&#x110;i&#x1EC1;u kho&#x1EA3;n S&#x1EED; d&#x1EE5;ng">&#x110;i&#x1EC1;u kho&#x1EA3;n S&#x1EED; d&#x1EE5;ng</a></li>
+                                  <li><a href="/site-map/" title="S&#x1A1; &#x111;&#x1ED3; Trang web">S&#x1A1; &#x111;&#x1ED3; Trang web</a></li>
+  
+  
+                          </ul>
+                          <div class="teconsent_showBorder" id="teconsent">
+                              <script nonce="rJ6JvaVMqUCD/0roe2x/dg" async="async" type="text/javascript" src="https://consent.truste.com/notice?domain=starbucks.com&amp;c=teconsent&amp;text=true&amp;js=nj&amp;noticeType=bb&amp;country=vn&amp;language=vi" crossorigin=""></script>
+                          </div>
+                      </div>
+                      <div class="column size12of12">
+                          <p class="footer_copyright">&copy; 2023 Starbucks Coffee Company. M&#x1ECD;i quy&#x1EC1;n &#x111;&#x1B0;&#x1EE3;c b&#x1EA3;o l&#x1B0;u.</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+    </div>
+      <!-- <div class="social-footer">
+        <li><a target="_blank" href="https://www.facebook.com/thanhlongdev">
+            <i class="fa fa-facebook-square" aria-hidden="true"></i>
+          </a></li>
+        <li><a target="_blank" href="https://github.com/long1211">
+            <i class="fa fa-github-square" aria-hidden="true"></i>
+          </a></li> -->
+
+      </div>
+     
+    
+    
+  </footer>
+  <script src="./index.js"></script>
+
+
+</body>
+
+</html>
